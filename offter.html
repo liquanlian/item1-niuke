@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="js/vue.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/offter.css"/>
+	</head>
+	<body>
+		<div id="offter3">
+			<!-- 占位符 -->
+			<ul>
+				<li @click="color1(i)" v-for="(v,i) in title" :class="{bg:num==i}">{{v}}</li>
+			</ul>
+			<!-- <button @click="num='vhead'" >实习</button><button @click="num='vfoot'" >社招</button> -->
+			<component :is="num1"></component>
+		</div>
+		<!-- template 必须写在绑定区域#box外面 -->
+		<!-- template 必须要有一个根元素 -->
+		<template id="head">
+				 <div class="col">
+					 <div class="nav3_a">
+					 	<img src="./img/4A1F8423294DF7468319CB1E67C05FE3.jpg" >
+						<ul>
+							<li v-for="(v,i) in foot3"><img :src="v.src3" ><p>{{v.text}}</p></li>
+						</ul>
+						<div class="qz">
+							<h4>求职推荐</h4>
+							<p>更多推荐></p>
+						</div>
+						<ul class="ul3">
+							<li v-for="(v,i) in imgs3"><img :src="v.src3_a" ><p>{{v.text3}}</p></li>
+						</ul>
+						<div class="qz sx">
+							<h4>实习广场</h4>
+							<p>更多实习></p>
+						</div>
+						<div class="gs">
+							<ul>
+								<li v-for="(v,i) in gs3">
+									<p class="p1">{{v.zw}}</p>
+									<p class="p2">{{v.ms}}</p>
+									<p class="p3">{{v.dd}}</p>
+									<p class="p4">{{v.gz}}</p>
+									<p class="p5">{{v.fk}}</p>
+									<img :src="v.logo" >
+									<span class="sapn1">{{v.name}}</span>
+									<span class="sapn2">{{v.js}}</span>
+									<p class="p6">{{v.sj}}</p>
+								</li>
+							</ul>
+						</div>
+					 </div>					
+				</div> 	
+		</template>
+		<template id="foot">
+			<div class="col">
+				<div class="nav3_a">
+					<img src="./img/offer-report.png" >
+					<ul>
+						<li v-for="(v,i) in foot3"><img :src="v.src3" ><p>{{v.text}}</p></li>
+					</ul>
+					<div class="qz3 sx3">
+						<h4>社招广场</h4>
+						<p>更多社招></p>
+					</div>
+					<div class="gs1 gs">
+						<ul>
+							<li v-for="(v,i) in gs3">
+								<p class="p1">{{v.zw}}</p>
+								<p class="p2">{{v.ms}}</p>
+								<p class="p3">{{v.dd}}</p>
+								<p class="p4">{{v.gz}}</p>
+								<p class="p5">{{v.fk}}</p>
+								<img :src="v.logo" >
+								<span class="sapn1">{{v.name}}</span>
+								<span class="sapn2">{{v.js}}</span>
+								<p class="p6">{{v.sj}}</p>
+							</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</template>
+		<script type="text/javascript" src="js/offter.js"></script>
+	</body>
+</html>
